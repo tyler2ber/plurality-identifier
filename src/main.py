@@ -2,6 +2,7 @@
 print("\n---- PLURALITY IDENTIFIER ----")
 print("provide the counts, get the plurality\n\n")
 
+# GROUPS w/ COUNTS
 print("GROUPS w/ COUNTS")
 groups = {}
 while True:
@@ -22,6 +23,10 @@ while True:
 		print("\n")
 		break
 
-# TODO:
-# print("\nALLIANCES (ex: group1+group2, group3+group5)")
+# ALLIANCES
+print("\nALLIANCES (example: group1+group2, group3, group4+group5)")
+for group in groups:
+	print(f"- {group}:{groups[group]}")
+alliances = input("\nalliances: ").split(",")
+
 # print("\nISOLATED (list_groups_and_alliances_here)")
