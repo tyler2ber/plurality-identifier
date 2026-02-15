@@ -23,10 +23,10 @@ while True:
 		print("\n")
 		break
 
-# ALLIANCES
-print("\nALLIANCES (example: group1+group2, group3, group4+group5)")
-for group in groups:
-	print(f"- {group}:{groups[group]}")
-alliances = input("\nalliances: ").split(",")
-
-# print("\nISOLATED (list_groups_and_alliances_here)")
+# CONTROL GROUP
+control_group = input("Enter control_group (or combine multiple w/ group1+group5): ")
+print(f"control_group: {control_group}\n")
+# verify all groups
+for group in control_group.split("+"):
+	if group not in groups:
+		print("ERROR: control_group contains unknown group")
