@@ -23,16 +23,22 @@ while True:
 		print("\n")
 		break
 
-# ISOLATED_GROUPS
-isolated_groups = input("Enter isolated_groups (or combine multiple w/ group1+group5): ").split("+")
-print(f"isolated_groups: {isolated_groups}\n")
+# ALLIANCE
+alliance = input("Enter alliance (combine multiple w/ group1+group5): ").split("+")
+print(f"alliance: {alliance}\n")
 # verify all groups
-for group in isolated_groups:
+for group in alliance:
 	if group not in groups:
-		print("ERROR: isolated_groups contains unknown group")
+		print("ERROR: alliance contains unknown group")
 
 # CALCULATE
 # totals→percent
+
+# get total of alliance
+alliance_total = 0
+for alliance_group in alliance:
+	alliance_total += groups[alliance_group]
+print(f"alliance_total: {alliance_total}")
 
 # get total of groups
 group_total = 0
@@ -40,17 +46,11 @@ for group in groups:
 	group_total += groups[group]
 print(f"group_total: {group_total}")
 
-# get total of isolated_groups
-isolatedgroup_total = 0
-for isolated_group in isolated_groups:
-	isolatedgroup_total += groups[isolated_group]
-print(f"isolatedgroup_total: {isolatedgroup_total}")
-
 print("----")
 
 # get percents
-isolated_groups_percent = round((isolatedgroup_total / group_total) * 100, 2)
-print(f"{isolated_groups}: {isolated_groups_percent}%")
-for isolated_group in isolated_groups:
-	isolated_group_percent = round((groups[isolated_group] / group_total) * 100, 2)
-	print(f"{isolated_group}: {isolated_group_percent}%")
+alliance_percent = round((alliance_total / group_total) * 100, 2)
+print(f"{alliance}: {alliance_percent}% ({alliance_total}/{group_total})")
+for alliance_group in alliance:
+	alliance_group_percent = round((groups[alliance_group] / group_total) * 100, 2)
+	print(f"{alliance_group}: {alliance_group_percent}% ({groups[alliance_group]}/{group_total})")
