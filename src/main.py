@@ -23,10 +23,10 @@ while True:
 		print("\n")
 		break
 
-# CONTROL GROUP
-control_group = input("Enter control_group (or combine multiple w/ group1+group5): ")
-print(f"control_group: {control_group}\n")
+# ISOLATED
+isolated = input("Enter isolated (or combine multiple w/ group1+group5): ")
+print(f"isolated: {isolated}\n")
 # verify all groups
-for group in control_group.split("+"):
+for group in isolated.split("+"):
 	if group not in groups:
-		print("ERROR: control_group contains unknown group")
+		print("ERROR: isolated contains unknown group")
