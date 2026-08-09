@@ -26,13 +26,11 @@ while True:
 # ALLIANCE
 alliance = input("Enter alliance (combine multiple w/ group1+group5): ").split("+")
 print(f"alliance: {alliance}\n")
+
 # verify all groups
 for group in alliance:
 	if group not in groups:
 		print("ERROR: alliance contains unknown group")
-
-# CALCULATE
-# totals→percent
 
 # get total of alliance
 alliance_total = 0
@@ -48,7 +46,7 @@ print(f"group_total: {group_total}")
 
 print("----")
 
-# get percents
+# calculate percents
 alliance_percent = round((alliance_total / group_total) * 100, 2)
 print(f"{alliance}: {alliance_percent}% ({alliance_total}/{group_total})")
 for alliance_group in alliance:
